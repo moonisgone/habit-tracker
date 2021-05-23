@@ -15,23 +15,25 @@ class Habit extends Component {
     };
 
     render() {
+        console.log(this.props.habit);
+        const {name, count} = this.props.habit;
         return( 
             <li className="habit">
-                <span className="habit-name">Reading</span>
-                <span className="habit-count">{this.state.count}</span>
+                <span className="habit-name">{name}</span>
+                <span className="habit-count">{count}</span>
                 <button 
                 className="habit-button habit-increase"
                 onClick={this.handleIncrement}
                 >
-                    <i class="fas fa-plus-square"></i>
+                    <i className="fas fa-plus-square"></i>
                 </button>
                 <button className="habit-button habit-decrease"
                 onClick={this.handleDecrement}
                 >
-                    <i class="fas fa-minus-square"></i>
+                    <i className="fas fa-minus-square"></i>
                 </button>
                 <button className="habit-button habit-delete">
-                    <i class="fas fa-trash"></i>
+                    <i className="fas fa-trash"></i>
                 </button>
             </li>
         );
