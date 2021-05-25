@@ -46,6 +46,14 @@ handleAdd=(name)=>{
   this.setState({habits: habits});
 }
 
+handleReset=()=>{
+  const habits = this.state.habits.map(habit=>{
+    habit.count = 0;
+    return habit;
+  });
+  this.setState({habits: habits});
+}
+
   render() {
     return( 
     <>
@@ -58,7 +66,8 @@ handleAdd=(name)=>{
       onIncrement={this.handleIncrement}
       onDecrement={this.handleDecrement}
       onDelete={this.handleDelete}
-      onAdd={this.handleAdd}  
+      onAdd={this.handleAdd}
+      onReset={this.handleReset}  
       >
       </Habits>
     </>
