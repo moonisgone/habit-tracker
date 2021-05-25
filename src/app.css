@@ -25,10 +25,22 @@
   border-radius: 50%;
 }
 
-.fa-leaf{
-  font-size: 40px;
-  color: green;
+.input{
+  
+  font-size: 2rem;
 }
+
+.input{
+  margin-right: 0.2rem;
+}
+
+.addBtn{
+  font-size: 1.5rem;
+  height: 100%;
+  background-color: green;
+  color: white;
+}
+
 
 button{
   outline: none;

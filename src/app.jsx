@@ -3,6 +3,7 @@ import './app.css';
 import Habit from './components/habit';
 import Habits from './components/habits';
 import Navbar from './components/navbar';
+import Addform from './components/addform';
 
 class App extends Component {
   state = {
@@ -36,17 +37,28 @@ handleDelete=(habit)=>{
     this.setState({habits: habits});
 };
  
+handleAdd=(name)=>{
+  //const habits=[...this.state.habits, {id:Date.now(), name:name,count:0}]; 
+  const habits=[...this.state.habits]
+  const habit = {id:Date.now(), name:name,count:0};
+  habits.push(habit);
+  console.log(this.state.habits);
+  this.setState({habits: habits});
+}
+
   render() {
     return( 
     <>
       <Navbar totalCount={this.state.habits.filter(item=>item.count>0).length}>
       
       </Navbar>
+      
       <Habits 
       habits={this.state.habits}
       onIncrement={this.handleIncrement}
       onDecrement={this.handleDecrement}
-      onDelete={this.handleDelete}  
+      onDelete={this.handleDelete}
+      onAdd={this.handleAdd}  
       >
       </Habits>
     </>
